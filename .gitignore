@@ -17,3 +17,7 @@
 coverage
 node_modules
 npm-debug.log
+*.js.map
+server/**/*.js
+common/**/*.js
+/client/
