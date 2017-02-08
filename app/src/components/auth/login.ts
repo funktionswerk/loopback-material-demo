@@ -1,14 +1,30 @@
 import {Component} from '@angular/core';
+import {UserApi} from '../../../sdk/services';
+
+interface ICredentials {
+  email?: string;
+  password?: string;
+}
 
 @Component({
   selector: 'loopback-login',
-  template: require('./login.pug')()
+  template: require('./login.pug')
 })
 export class LBLoginComponent  {
-  public name = 'Login';
+  email: string;
+  password: string;
 
-  public onButtonClicked(): void {
-    console.log('CLICKED');
+  constructor(private User: UserApi) {
+  }
+
+  public onLogin(): void {
+    this.User.login({
+      email: this.email,
+      password: this.password
+    }).toPromise().then(() => {
+      console.log('LOGIN DONE');
+    });
+    console.log('LOGGING IN');
   }
 
 }

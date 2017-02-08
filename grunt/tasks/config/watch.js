@@ -35,7 +35,12 @@ module.exports = function (grunt) {
     'ts-backend-dev': {
       options: watchOptions,
       files: watchFilesBackend,
-      tasks: [ 'ts:backend-dev' ]
+      tasks: ['ts:backend-dev']
+    },
+    'test-backend': {
+      options: watchOptions,
+      files: watchFilesBackend,
+      tasks: ['test-backend']
     }
   });
 

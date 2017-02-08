@@ -10,7 +10,8 @@ module.exports = function (grunt) {
       options: {
         module: 'commonjs',
         fast: 'never',
-        sourceMap: true
+        sourceMap: true,
+        lib: ['es2015']
       }
     },
     'backend-prod': {
@@ -18,7 +19,8 @@ module.exports = function (grunt) {
       options: {
         module: 'commonjs',
         fast: 'never',
-        sourceMap: false
+        sourceMap: false,
+        lib: ['es2015']
       }
     }
   });

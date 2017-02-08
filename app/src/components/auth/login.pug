@@ -1,6 +1,7 @@
+
 form.login
   md-input-container
-    input(md-input placeholder="Email" type="email")
+    input#email(md-input name="email" type="email" placeholder="Email" [(ngModel)]="email" required)
   md-input-container
-    input(md-input placeholder="Password" type="password")
-  button(md-button) Login
+    input#password(md-input name="password" placeholder="Password" type="password" [(ngModel)]="password" required)
+  button(md-button (click)="onLogin()") Login

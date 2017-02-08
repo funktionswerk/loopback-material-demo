@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.pug/,
-        loader: "pug-loader"
+        loader: "pug-ng-html-loader"
       },
       {
         test: /\.css$/,
