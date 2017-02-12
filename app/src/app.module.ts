@@ -6,8 +6,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {SDKBrowserModule} from '../sdk/index';
 
 import {AppComponent}  from './app.component';
-import {AppRoutes} from './app.routes';
+import {AppRoutes} from './app-routes.module';
 import {LBLoginComponent} from './components/auth/login';
+import {LoginViewComponent} from './components/views/login';
 import {DashboardViewComponent} from './components/views/dashboard';
 
 @NgModule({
@@ -18,7 +19,7 @@ import {DashboardViewComponent} from './components/views/dashboard';
     MaterialModule.forRoot(),
     SDKBrowserModule.forRoot()
   ],
-  declarations: [AppComponent, LBLoginComponent, DashboardViewComponent],
+  declarations: [AppComponent, LBLoginComponent, DashboardViewComponent, LoginViewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
