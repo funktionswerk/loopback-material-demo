@@ -11,7 +11,7 @@ module.exports = function(server: any) {
 
   // Install a `/` route that returns server status
   var router = server.loopback.Router();
-  router.get('/', (req: any, res: any) => {
+  router.get('/*', (req: any, res: any) => {
     const ctx = {
       staticUrl: staticUrl
     };
