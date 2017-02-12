@@ -6,11 +6,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {SDKBrowserModule} from '../sdk/index';
 
 import {AppComponent}  from './app.component';
-import {AppRoutingModule} from './app-routing.module';
+import {AppRoutingModule, AppViewComponents} from './app-routing.module';
 import {LBLoginComponent} from './components/auth/login';
-import {LoginViewComponent} from './components/views/Login';
-import {DashboardViewComponent} from './components/views/Dashboard';
-import {PageNotFoundViewComponent} from './components/views/PageNotFound';
 
 @NgModule({
   imports: [
@@ -20,13 +17,10 @@ import {PageNotFoundViewComponent} from './components/views/PageNotFound';
     SDKBrowserModule.forRoot(),
     AppRoutingModule
   ],
-  declarations: [
+  declarations: AppViewComponents.concat([
     AppComponent,
-    LBLoginComponent,
-    DashboardViewComponent,
-    LoginViewComponent,
-    PageNotFoundViewComponent
-  ],
+    LBLoginComponent
+  ]),
   bootstrap: [AppComponent]
 })
 export class AppModule { }
