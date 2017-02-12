@@ -5,9 +5,9 @@ import {LoginViewComponent} from './components/views/Login';
 import {PageNotFoundViewComponent} from './components/views/PageNotFound';
 
 const AppRoutes: Routes = [
-  {path: DashboardViewComponent.path, component: DashboardViewComponent},
-  {path: LoginViewComponent.path, component: LoginViewComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  DashboardViewComponent.routeConfig,
+  LoginViewComponent.routeConfig,
+  {path: '', redirectTo: LoginViewComponent.routeConfig.path, pathMatch: 'full'},
   {path: '**', component: PageNotFoundViewComponent}
 ];
 
