@@ -1,11 +1,9 @@
 import * as path from 'path';
 import * as loopback from 'loopback';
-import * as slashes from 'connect-slashes';
 
 module.exports = function(server: any) {
   const staticUrl =  server.get('staticUrl');
   server.use(staticUrl, loopback.static('client'));
-  server.use(slashes());
   server.set('view engine', 'pug');
   server.set('views', path.join(process.cwd(), 'views'));
 
