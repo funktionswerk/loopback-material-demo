@@ -6,20 +6,27 @@ import {BrowserModule} from '@angular/platform-browser';
 import {SDKBrowserModule} from '../sdk/index';
 
 import {AppComponent}  from './app.component';
-import {AppRoutes} from './app-routes.module';
+import {AppRoutingModule} from './app-routing.module';
 import {LBLoginComponent} from './components/auth/login';
-import {LoginViewComponent} from './components/views/login';
-import {DashboardViewComponent} from './components/views/dashboard';
+import {LoginViewComponent} from './components/views/Login';
+import {DashboardViewComponent} from './components/views/Dashboard';
+import {PageNotFoundViewComponent} from './components/views/PageNotFound';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(AppRoutes),
     MaterialModule.forRoot(),
-    SDKBrowserModule.forRoot()
+    SDKBrowserModule.forRoot(),
+    AppRoutingModule
   ],
-  declarations: [AppComponent, LBLoginComponent, DashboardViewComponent, LoginViewComponent],
+  declarations: [
+    AppComponent,
+    LBLoginComponent,
+    DashboardViewComponent,
+    LoginViewComponent,
+    PageNotFoundViewComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
