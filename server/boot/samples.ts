@@ -16,6 +16,6 @@ module.exports = async(server: any) => {
   let numberOfPairsToBuild = 15;
   while(numberOfPairsToBuild > 0) {
     --numberOfPairsToBuild;
-    pairRecipe();
+    await pairRecipe();
   }
 }
