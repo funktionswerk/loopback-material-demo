@@ -9,4 +9,5 @@ export class LoginViewComponent {
     path: 'login',
     component: LoginViewComponent
   }
+  public nextAfterLogin = '/dashboard';
 }

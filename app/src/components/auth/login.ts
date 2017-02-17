@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {UserApi} from '../../../sdk/services';
+import {Router} from '@angular/router';
 
 interface ICredentials {
   email?: string;
@@ -11,10 +12,14 @@ interface ICredentials {
   template: require('./login.pug')
 })
 export class LBLoginComponent  {
-  email: string;
-  password: string;
+  public email: string;
+  public password: string;
+  @Input() nextAfterLogin: string;
 
-  constructor(private User: UserApi) {
+  constructor(
+    private User: UserApi,
+    private router: Router
+  ) {
   }
 
   public onLogin(): void {
@@ -23,6 +28,7 @@ export class LBLoginComponent  {
       password: this.password
     }).toPromise().then(() => {
       console.log('LOGIN DONE');
+      this.router.navigate([this.nextAfterLogin]);
     });
     console.log('LOGGING IN');
   }
