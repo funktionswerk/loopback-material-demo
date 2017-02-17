@@ -28,6 +28,7 @@ export class LBLoginComponent  {
       password: this.password
     }).toPromise().then(() => {
       console.log('LOGIN DONE');
+      //TODO: This should be handled by the view ctrl
       this.router.navigate([this.nextAfterLogin]);
     });
     console.log('LOGGING IN');
