@@ -100,7 +100,6 @@ export abstract class BaseLoopBackApi {
               ? this.searchParams.getURLSearchParams() : null,
       body    : body ? JSON.stringify(body) : undefined
     });
-  console.log(request);
     return this.http.request(request)
       .map((res: any) => (res.text() != "" ? res.json() : {}))
       .catch((e) => this.errorHandler.handleError(e));

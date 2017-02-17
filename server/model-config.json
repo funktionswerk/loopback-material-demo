@@ -31,5 +31,9 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Pair": {
+    "dataSource": "db",
+    "public": true
   }
 }
